@@ -31,20 +31,15 @@ public class ProductServiceTest {
     @Test
     public void addProductTest() {
 
-        /*Stock stock = new Stock();
-        stock.setIdStock(1L);
-        stock.setTitle("Test Stock");
-      Stock savedStock =  stockService.addStock(stock);
-        assertNotNull(savedStock);
-*/
+
         Product Produit = new Product();
         Produit.setTitle("pull");
         Produit.setQuantity(23);
         Produit.setPrice(234);
         Produit.setCategory(ProductCategory.CLOTHING);
-         Product result = productService.addProduct(Produit,null);
+         Product result = productService.addProduct(Produit,1L);
         assertEquals(Produit, result);
-         }
+        assertTrue(stock.getProducts().contains(Produit));         }
       /*  Stock stock = new Stock();
         stock.setIdStock(1L);
         stock.setTitle("Test Stock");
