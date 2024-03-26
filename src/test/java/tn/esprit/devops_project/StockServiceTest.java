@@ -12,6 +12,11 @@ import tn.esprit.devops_project.services.Iservices.IStockService;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class StockServiceTest {
 
@@ -19,6 +24,7 @@ public class StockServiceTest {
     private IStockService stockService;
 
     @Test
+    @Order(1)
     public void addStockTest() {
 
         Stock stock = new Stock();

@@ -18,7 +18,11 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class ProductServiceTest {
 
@@ -27,6 +31,7 @@ public class ProductServiceTest {
 
    
     @Test
+    @Order(2)
     public void addProductTest() {
 
 
