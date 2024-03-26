@@ -10,6 +10,7 @@ import tn.esprit.devops_project.services.Iservices.IProductService;
 import tn.esprit.devops_project.services.Iservices.IStockService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 public class StockServiceTest {
@@ -28,5 +29,8 @@ public class StockServiceTest {
 
         Stock result = stockService.addStock(stock);
         assertEquals(stock, result);
+        assertNotNull(result.getIdStock());
+        assertEquals(stock.getTitle(), result.getTitle());
+
     }
 }

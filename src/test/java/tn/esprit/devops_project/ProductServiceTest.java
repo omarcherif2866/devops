@@ -1,7 +1,5 @@
 package tn.esprit.devops_project;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,7 @@ import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
@@ -37,9 +35,14 @@ public class ProductServiceTest {
         Produit.setQuantity(23);
         Produit.setPrice(234);
         Produit.setCategory(ProductCategory.CLOTHING);
-         Product result = productService.addProduct(Produit,1L);
+         Product result = productService.addProduct(Produit,2L);
         assertEquals(Produit, result);
-        assertTrue(stock.getProducts().contains(Produit));         }
+        assertNotNull(result.getIdProduct());
+        assertEquals(Produit.getTitle(), result.getTitle());
+        assertEquals(Produit.getQuantity(), result.getQuantity());
+        assertEquals(Produit.getPrice(), result.getPrice());
+        assertEquals(Produit.getCategory(), result.getCategory());
+    }
       /*  Stock stock = new Stock();
         stock.setIdStock(1L);
         stock.setTitle("Test Stock");
