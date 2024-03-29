@@ -40,7 +40,7 @@ public class ProductServiceTest {
         Produit.setQuantity(23);
         Produit.setPrice(234);
         Produit.setCategory(ProductCategory.CLOTHING);
-         Product result = productService.addProduct(Produit,2L);
+         Product result = productService.addProduct(Produit,1L);
         assertEquals(Produit, result);
         assertNotNull(result.getIdProduct());
         assertEquals(Produit.getTitle(), result.getTitle());
